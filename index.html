@@ -1,10 +1,187 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>HI WELCOME</title>
-  </head>
-  <body>
-    <h1>This is a Rohitash saini</h1>
-    <p>This is a paragraph.</p>
-  </body>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopping Website</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background-color: #f9f9f9;
+    }
+
+    /* Navbar */
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333;
+        padding: 15px 20px;
+        color: #fff;
+    }
+
+    nav .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+    }
+
+    nav ul li {
+        margin-left: 20px;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 1rem;
+    }
+
+    nav ul li a:hover {
+        color: #f0c14b;
+    }
+
+    .cart-count {
+        background: red;
+        color: #fff;
+        font-size: 12px;
+        padding: 2px 6px;
+        border-radius: 50%;
+        margin-left: 5px;
+    }
+
+    /* Banner */
+    .banner {
+        background: url('https://images.unsplash.com/photo-1542291026-7eec264c27ff') no-repeat center center/cover;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+
+    /* Products */
+    .products {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 30px;
+    }
+
+    .product-card {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        padding: 15px;
+        text-align: center;
+    }
+
+    .product-card img {
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    .product-card h3 {
+        margin: 10px 0;
+        font-size: 18px;
+    }
+
+    .product-card p {
+        color: green;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .product-card button {
+        background: #f0c14b;
+        border: 1px solid #a88734;
+        padding: 8px 12px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+
+    .product-card button:hover {
+        background: #ddb347;
+    }
+
+    /* Footer */
+    footer {
+        text-align: center;
+        background: #333;
+        color: white;
+        padding: 10px 0;
+        margin-top: 30px;
+    }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+    <div class="logo">ShopEasy</div>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Cart <span class="cart-count" id="cart-count">0</span></a></li>
+    </ul>
+</nav>
+
+<!-- Banner -->
+<div class="banner">Welcome to ShopEasy</div>
+
+<!-- Products Section -->
+<section class="products" id="products">
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1606813907290-6d8aeb37e10e" alt="Shoes">
+        <h3>Stylish Shoes</h3>
+        <p>$49.99</p>
+        <button onclick="addToCart()">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f" alt="Watch">
+        <h3>Classic Watch</h3>
+        <p>$99.99</p>
+        <button onclick="addToCart()">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b" alt="Bag">
+        <h3>Leather Bag</h3>
+        <p>$69.99</p>
+        <button onclick="addToCart()">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1581235720704-067a6f31baf7" alt="Headphones">
+        <h3>Wireless Headphones</h3>
+        <p>$59.99</p>
+        <button onclick="addToCart()">Add to Cart</button>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    &copy; 2025 ShopEasy | All Rights Reserved
+</footer>
+
+<script>
+    let cartCount = 0;
+    function addToCart() {
+        cartCount++;
+        document.getElementById('cart-count').innerText = cartCount;
+    }
+</script>
+
+</body>
 </html>
+
